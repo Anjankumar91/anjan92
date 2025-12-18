@@ -1,0 +1,130 @@
+/* Projects.css */
+
+.projects-section {
+    position: relative;
+    /* Full viewport height to make it feel like a "Gallery Stop" */
+    min-height: 100vh;
+    padding: 100px 0;
+    /* Vertical padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Center the title */
+    overflow: visible;
+    /* Allow parallax items to move outside */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    z-index: 2;
+    /* Floating Title */
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    color: #fff;
+}
+
+.projects-container {
+    /* Horizontal Scroll Magic */
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 80px 5vw;
+    /* Side padding so first card isn't glued to edge */
+    width: 100%;
+
+    /* Smooth Scroll Snap */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    /* Hide Scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE */
+
+    /* Ensure z-index is above background */
+    z-index: 2;
+}
+
+.projects-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+/* Ensure cards don't shrink */
+.projects-container>.project-card,
+.projects-container>div {
+    flex: 0 0 400px;
+    /* Fixed width cards */
+    scroll-snap-align: center;
+    /* transform-style: preserve-3d; Removed to avoid stacking context issues with glass */
+}
+
+/* The Project content within the card */
+.project-content {
+    position: relative;
+    z-index: 3;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.project-desc {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    .projects-container>.project-card,
+    .projects-container>div {
+        flex: 0 0 85vw;
+        /* Wider cards on mobile */
+    }
+}

@@ -1,0 +1,100 @@
+/* LightPillar.css */
+
+.light-pillar-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 150vh;
+    /* Taller than screen to cover everything */
+    z-index: -2;
+    /* Behind content, ahead of background */
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    /* Subtle blend */
+    mix-blend-mode: screen;
+    /* Additive blending for "light" look */
+    /* Rotate slightly for abstract feel */
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+/* The Core Beam */
+.light-beam-core {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            var(--accent-neon) 40%,
+            #FF9FFC 60%,
+            transparent 100%);
+    filter: blur(40px);
+    opacity: 0.8;
+}
+
+/* The Rotating Glow (Energy) */
+.light-beam-glow {
+    position: absolute;
+    width: 200px;
+    height: 150%;
+    background: conic-gradient(from 0deg at 50% 50%,
+            transparent 0deg,
+            rgba(82, 39, 255, 0.4) 60deg,
+            transparent 120deg,
+            rgba(255, 159, 252, 0.4) 180deg,
+            transparent 240deg,
+            rgba(82, 39, 255, 0.4) 300deg,
+            transparent 360deg);
+    filter: blur(60px);
+    animation: rotateBeam 10s linear infinite;
+}
+
+/* Secondary Glow for width */
+.light-beam-outer {
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    background: radial-gradient(ellipse at center,
+            rgba(82, 39, 255, 0.15) 0%,
+            transparent 70%);
+    filter: blur(80px);
+}
+
+@keyframes rotateBeam {
+    0% {
+        transform: scaleY(1.5) rotate(0deg);
+    }
+
+    100% {
+        transform: scaleY(1.5) rotate(360deg);
+    }
+}
+
+/* Adding a subtle pulse */
+.light-pillar-container {
+    animation: pillarPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes pillarPulse {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) rotate(-15deg) scale(0.9);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) rotate(-15deg) scale(1.1);
+    }
+}
+
+/* Mobile check */
+@media screen and (max-width: 768px) {
+    .light-pillar-container {
+        opacity: 0.4;
+        width: 300px;
+    }
+}

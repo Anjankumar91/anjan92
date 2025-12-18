@@ -1,0 +1,74 @@
+.dashboards-section {
+    padding: 100px 20px;
+    /* background: var(--bg-color); Removed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.dashboard-item {
+    height: 100%;
+}
+
+.dashboard-img-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    /* Inner radius */
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-item:hover .dashboard-img {
+    transform: scale(1.05);
+    /* Zoom effect */
+}
+
+.dashboard-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dashboard-item:hover .dashboard-overlay {
+    opacity: 1;
+}
+
+.dashboard-info {
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.dashboard-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}

@@ -1,0 +1,86 @@
+.job-sim-section {
+    padding: 100px 20px;
+    /* background: var(--bg-color); Removed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.job-sim-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.job-sim-card {
+    height: 100%;
+}
+
+.job-sim-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon-box {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.job-sim-title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.job-sim-issuer {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.job-sim-desc {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.job-sim-skills {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.skill-tag {
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.btn-view {
+    align-self: flex-start;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.btn-view:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}

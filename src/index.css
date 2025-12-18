@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+:root {
+  /* 
+    THEME: QUIET LUXURY / ULTRA-PREMIUM DARK
+    Mood: Expensive, Intentional, Invisible.
+  */
+
+  /* Base Colors - Deep Charcoal/Near Black */
+  --bg-color: #08080a;
+  --bg-subtle: #0f0f12;
+
+  /* Typography - Refined Off-White & Cool Gray */
+  --text-primary: #ededed;
+  --text-secondary: #888890;
+  --text-tertiary: #505055;
+
+  /* Accent - Soft Neon (Minimal Usage) */
+  --accent-neon: #3b82f6;
+  /* Soft Electric Blue */
+  --accent-faint: rgba(59, 130, 246, 0.08);
+  /* For ultra-subtle fills */
+
+  /* Surfaces - Dark Glass / Invisible Panels */
+  --surface-dark: rgba(255, 255, 255, 0.02);
+  --surface-hover: rgba(255, 255, 255, 0.04);
+
+  /* Borders - Hairline, Barely There */
+  --border-light: rgba(255, 255, 255, 0.06);
+  --border-focus: rgba(255, 255, 255, 0.15);
+
+  /* Font */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* GLOBAL RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* Crisp text */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+   BACKGROUND SYSTEM 
+   No patterns. No grid lines. Just deep noise and gradient.
+*/
+
+.global-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Better than 100vw (avoids scrollbar conflict) */
+  height: 100vh;
+  z-index: -3;
+  pointer-events: none;
+  background: var(--bg-color);
+  contain: strict;
+  /* CSS Containment for Perf */
+  contain: strict;
+  /* CSS Containment for Perf */
+}
+
+.global-bg iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* GPU Acceleration Hints */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Subtle Noise Texture */
+/* Noise Texture Removed for Performance (2x Spline Layers active) */
+/* .global-bg::before { ... } */
+
+/* Smooth Gradient for Depth (Top Center Light) */
+/* Gradient Removed for Performance */
+/* .global-bg::after { ... } */
+
+/* TYPOGRAPHY UTILITIES */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 500;
+  /* Medium weight, not bold */
+  letter-spacing: -0.02em;
+  /* Tight tracking for modern feel */
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Minimal Underline Interaction */
+a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-neon);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+a:not(.btn):hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 
+   PREMIUM CARD SYSTEM (The "Disappearing" UI)
+   Dark glass, hairline borders, no shadows.
+*/
+.premium-card {
+  position: relative;
+  background: var(--surface-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  /* Smooth corners */
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  /* No heavy shadow or blur by default */
+}
+
+.premium-card:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-focus);
+  transform: translateY(-2px);
+  /* Slight lift */
+  /* No neon glow, just refined focus */
+}
+
+.premium-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* BUTTONS - Minimal & Sharp */
+button,
+.btn {
+  font-family: var(--font-main);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 10px 24px;
+  border-radius: 6px;
+  /* Slightly tighter radius */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* UTILS */
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lenis Fixes */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

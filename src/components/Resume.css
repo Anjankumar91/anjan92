@@ -1,0 +1,46 @@
+.resume-section {
+    padding: 100px 20px;
+    /* background: var(--bg-color); Removed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resume-wrapper {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-container {
+    /* Background handled by premium-card */
+    /* padding: 3rem; inherited/overridden */
+    width: 100%;
+    text-align: center;
+}
+
+.resume-content h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.resume-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.resume-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .resume-container {
+        padding: 1.5rem;
+        /* Adjustment for mobile if needed relative to premium card default */
+    }
+}

@@ -1,0 +1,52 @@
+/* UnicornEmbed.css */
+
+.unicorn-embed-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* Above Spline (-2), Behind Content (0+) */
+    /* Behind everything */
+    pointer-events: none;
+    /* Let clicks pass through */
+    transition: filter 1.5s ease-in-out;
+    /* Smooth color morphing */
+    overflow: hidden;
+}
+
+/* Force full width/height on the injected unicorn div */
+.unicorn-embed-container>div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* 
+   --------------------------------------------------
+   THE INVISIBILITY CLOAK (Watermark Removal Hack)
+   --------------------------------------------------
+   GLOBAL OVERRIDE: We target the entire document because the script 
+   might append the logo to the body, not just our container.
+*/
+a[href*="unicorn.studio"],
+a[href*="unicorn"],
+.us-branding,
+.us-logo {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+/* Specific scoping if it is inside the container */
+.unicorn-embed-container [class*="us-branding"],
+.unicorn-embed-container [class*="us-logo"],
+.unicorn-embed-container a[href*="unicorn.studio"] {
+    display: none !important;
+}

@@ -1,0 +1,66 @@
+/* AuroraBackground.css */
+.aurora-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    /* Ahead of Spline (-3), behind content */
+    overflow: hidden;
+    pointer-events: none;
+    /* Blend mode is key here. 'overlay' or 'screen' interacts nicely with the dark background */
+    mix-blend-mode: hard-light;
+    opacity: 0.4;
+    /* Subtle touch */
+}
+
+.aurora-blob {
+    position: absolute;
+    filter: blur(80px);
+    /* The "Glass" effect */
+    opacity: 0.7;
+    animation: floatBlob 20s infinite alternate ease-in-out;
+    border-radius: 50%;
+}
+
+/* Three distinct blobs for complexity */
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(82, 39, 255, 0.4) 0%, transparent 70%);
+    animation-duration: 25s;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 70vw;
+    height: 70vh;
+    background: radial-gradient(circle, rgba(255, 159, 252, 0.3) 0%, transparent 70%);
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    top: 40%;
+    left: 40%;
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    animation-duration: 35s;
+    animation-delay: -10s;
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(10%, 10%) scale(1.1);
+    }
+}
