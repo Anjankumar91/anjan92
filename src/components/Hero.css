@@ -57,7 +57,7 @@
     font-weight: 400;
     /* Pinyon is naturally 400 */
     /* Red touch blending into the existing Blue/Purple */
-    background: linear-gradient(90deg, #ef4444 0%, #3b82f6 50%, #8b5cf6 100%);
+    background: linear-gradient(90deg, #ff6b6b 0%, #4dabff 50%, #c084fc 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -136,4 +136,5 @@
     }
 
 }
+
 
