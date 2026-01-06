@@ -48,7 +48,7 @@ const LandingOverlay = ({ onSkip }) => {
                     color: 'white',
                     fontFamily: 'monospace'
                 }}>
-                    Loading Experience...
+                    🚀 Loading Experience... 🚀
                 </div>
             )}
         </motion.div>
@@ -56,3 +56,4 @@ const LandingOverlay = ({ onSkip }) => {
 };
 
 export default LandingOverlay;
+
