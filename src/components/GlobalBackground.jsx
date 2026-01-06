@@ -20,7 +20,7 @@ const GlobalBackground = memo(() => {
                     border: 'none',
                     mixBlendMode: 'screen',
                     opacity: 1, // Full opacity
-                    filter: 'brightness(1.0) contrast(1.0) saturate(1.0)', // Final visibility
+                    filter: 'brightness(1.1) contrast(1.1) saturate(1.1)', // Final visibility
                     pointerEvents: 'none',
                     transform: 'translate3d(0, 0, 0)', // Force GPU
                     backfaceVisibility: 'hidden',
@@ -33,6 +33,7 @@ const GlobalBackground = memo(() => {
 });
 
 export default GlobalBackground;
+
 
 
 
