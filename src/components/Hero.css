@@ -52,7 +52,7 @@
 
 .highlight-text {
     font-family: 'Pinyon Script', cursive;
-    font-size: 1.5em;
+    font-size: 1.3em;
     /* Larger script font */
     font-weight: 400;
     /* Pinyon is naturally 400 */
@@ -136,3 +136,4 @@
     }
 
 }
+
