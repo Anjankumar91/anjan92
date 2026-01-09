@@ -17,7 +17,7 @@ const Dashboards = () => {
         {
             title: 'Kohli Performance Dashboard',
             description: 'Sports analytics dashboard analyzing Kohli’s  CRICKET career performance from 2008-2022.',
-            imgUrl: kohliDashboard,,
+            imgUrl: kohliDashboard,
             link: '#',
         },
     ];
@@ -52,4 +52,5 @@ const Dashboards = () => {
 };
 
 export default Dashboards;
+
 
