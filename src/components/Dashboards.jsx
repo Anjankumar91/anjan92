@@ -3,19 +3,21 @@ import './Dashboards.css';
 import { FaChartBar } from 'react-icons/fa';
 import PremiumCard from './PremiumCard';
 import { ParallaxItem } from './MotionWrappers';
+import kobeDashboard from '../assets/kobe-dashboard.png';
+import kohliDashboard from '../assets/kohli-dashboard.png';
 
 const Dashboards = () => {
     const dashboards = [
         {
-            title: 'Sales Performance Dashboard',
-            description: 'Interactive dashboard tracking sales KPIs across regions and product categories.',
-            imgUrl: 'https://via.placeholder.com/600x400?text=Power+BI+Dashboard+1', // Replace with real image
+            title: 'Kobe Bryant Performance Dashboard',
+            description: 'Sports analytics dashboard analyzing Kobe Bryant’s NBA career performance from 1996–2016.',
+            imgUrl: kobeDashboard, // Replace with real image
             link: '#',
         },
         {
-            title: 'Customer Churn Analysis',
-            description: 'Analysis of customer retention and churn drivers using Power BI.',
-            imgUrl: 'https://via.placeholder.com/600x400?text=Power+BI+Dashboard+2',
+            title: 'Kohli Performance Dashboard',
+            description: 'Sports analytics dashboard analyzing Kohli’s  CRICKET career performance from 2008-2022.',
+            imgUrl: kohliDashboard,,
             link: '#',
         },
     ];
@@ -50,3 +52,4 @@ const Dashboards = () => {
 };
 
 export default Dashboards;
+
