@@ -26,7 +26,7 @@ const JobSimulations = () => {
 
     return (
         <section className="job-sim-section" id="job-simulations">
-            <h2 className="section-title">Job Simulation Certificates</h2>
+            <h2 className="section-title">Internships</h2>
             <div className="job-sim-container">
                 {jobSimulations.map((sim, index) => (
                     <ParallaxItem key={index} speed={index % 2 === 0 ? 0.4 : 1.0}>
@@ -58,3 +58,4 @@ const JobSimulations = () => {
 };
 
 export default JobSimulations;
+
