@@ -5,6 +5,7 @@ import PremiumCard from './PremiumCard';
 import { ParallaxItem } from './MotionWrappers';
 import kobeDashboard from '../assets/kobe-dashboard.png';
 import kohliDashboard from '../assets/kohli-dashboard.png';
+import MvsRDashboard from '../assets/M-vs-R-dashboard.png';
 
 const Dashboards = () => {
     const dashboards = [
@@ -18,6 +19,12 @@ const Dashboards = () => {
             title: 'Kohli Performance Dashboard',
             description: 'Sports analytics dashboard analyzing Kohli’s  CRICKET career performance from 2008-2022.',
             imgUrl: kohliDashboard,
+            link: '#',
+        },
+        {
+            title: 'Messi vs Ronaldo Overall Performance Dashboard',
+            description: 'Sports analytics dashboard analyzing Messi vs Ronaldo career Performance.',
+            imgUrl: MvsRDashboard,
             link: '#',
         },
     ];
@@ -52,5 +59,6 @@ const Dashboards = () => {
 };
 
 export default Dashboards;
+
 
 
