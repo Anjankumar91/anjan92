@@ -20,7 +20,8 @@
 
 .dashboard-img-wrapper {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 16/9;
+    /* height: 250px; */
     overflow: hidden;
     border-radius: 8px;
     /* Inner radius */
@@ -30,7 +31,7 @@
 
 .dashboard-img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -71,4 +72,5 @@
 .dashboard-desc {
     color: var(--text-secondary);
     font-size: 1rem;
+
 }
